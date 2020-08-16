@@ -1,0 +1,233 @@
+{
+  "title": "RemoteWorks",
+  "rules": [
+    {
+      "description": "switch on this rules",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": [ "control" ],
+              "optional": [ "caps_lock" ]
+            }
+          },
+          "to": [
+            { "key_code": "display_brightness_increment"},
+            {
+              "set_variable": {
+                "name": "is_rure_on",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_unless",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "switch off this rules",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": [ "control" ],
+              "optional": [ "caps_lock" ]
+            }
+          },
+          "to": [
+            { "key_code": "display_brightness_decrement"},
+            {
+              "set_variable": {
+                "name": "is_rure_on",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "esc -> esc + E",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "optional": [ "caps_lock" ]
+            }
+          },
+          "to": [
+            { "key_code": "left_command"},
+            { "key_code": "e"}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "command + W -> shift ＋ command ＋ option ＋ W",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [ "command" ],
+              "optional": [ "caps_lock" ]
+            }
+          },
+          
+          "to": [
+            { "key_code": "shift"},
+            { "key_code": "command"},
+            { "key_code": "option"},
+            {"key_code": "w"}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "shift + command + up(↑) -> up(↑)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "up_arrow",
+            "modifiers": {
+              "mandatory": [ "shift", "command" ],
+              "optional": [ "caps_lock" ]
+
+            }
+          },
+          
+          "to": [
+            { "key_code": "left_command"},
+            { "key_code": "e"}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "shift + command + down(↓) -> down(↓)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "down_arrow",
+            "modifiers": {
+              "mandatory": [ "shift", "command" ],
+              "optional": [ "caps_lock" ]
+
+            }
+          },
+          
+          "to": [
+            { "key_code": "left_command"},
+            { "key_code": "e"}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "shift + command + left(←) -> left(←)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_arrow",
+            "modifiers": {
+              "mandatory": [ "shift", "command" ],
+              "optional": [ "caps_lock" ]
+
+            }
+          },
+          
+          "to": [
+            { "key_code": "left_command"},
+            { "key_code": "e"}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "shift + command + right(→) -> right(→)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_arrow",
+            "modifiers": {
+              "mandatory": [ "shift", "command" ],
+              "optional": [ "caps_lock" ]
+
+            }
+          },
+          
+          "to": [
+            { "key_code": "left_command"},
+            { "key_code": "e"}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_rure_on",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+ ]
+}
