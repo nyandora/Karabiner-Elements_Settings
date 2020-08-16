@@ -9,7 +9,7 @@
           "from": {
             "key_code": "1",
             "modifiers": {
-              "mandatory": [ "control" ],
+              "mandatory": [ "option" ],
               "optional": [ "caps_lock" ]
             }
           },
@@ -40,7 +40,7 @@
           "from": {
             "key_code": "1",
             "modifiers": {
-              "mandatory": [ "control" ],
+              "mandatory": [ "option" ],
               "optional": [ "caps_lock" ]
             }
           },
